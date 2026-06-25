@@ -20,7 +20,7 @@ button.addEventListener("click", () => {
   error.style.display = "none";
   console.log("Login correto");
 
-   window.location.href = "../index.html.html";
+   window.location.href = "/frontend/login/index.html.html";
  } else{
    error.textContent = "login ou senha incorretos";
    error.style.display = "block";

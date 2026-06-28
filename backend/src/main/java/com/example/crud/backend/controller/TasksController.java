@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import java.util.List;
 
 
 @RestController
@@ -30,9 +30,9 @@ public class TasksController {
     @Autowired
     private interface_tasks dao;
 
-    @GetMapping("path")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
+    @GetMapping
+    public List<Tasks> ListarTasks(){
+        return dao.findAll();
     }
 
         @PostMapping

@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 
@@ -25,12 +26,20 @@ public class Tasks {
   @Column(name = "data_criacao", nullable = false, updatable = false)
   private LocalDateTime dataCriacao;
 
-  public void setId(Long id2) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'setId'");
-  }
-
-
-
-
+  @PrePersist
+  public void prePersist() {
+  this.dataCriacao = LocalDateTime.now();
 }
+
+
+  public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public LocalDateTime getDataCriacao() { return dataCriacao; }
+}
+
+
+

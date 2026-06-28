@@ -25,7 +25,12 @@ public class Tasks {
   @Column(name = "data_criacao", nullable = false, updatable = false)
   private LocalDateTime dataCriacao;
 
-  
+  public void setId(Long id2) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setId'");
+  }
+
+
 
 
 }
